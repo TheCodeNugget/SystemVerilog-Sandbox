@@ -6,7 +6,7 @@
 /// --------------------------------------------------------
 
 module bf_lowest_0 #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     output  logic [NUM_PORTS-1:0]  grant_o
@@ -15,7 +15,7 @@ module bf_lowest_0 #(
 endmodule
 
 module bf_lowest_1 #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     output  logic [NUM_PORTS-1:0]  grant_o
@@ -24,7 +24,7 @@ module bf_lowest_1 #(
 endmodule
 
 module bf_0_from_index #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     input   logic [$clog2(NUM_PORTS)-1:0] index,
@@ -34,7 +34,7 @@ module bf_0_from_index #(
 endmodule
 
 module bf_1_from_index #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     input   logic [$clog2(NUM_PORTS)-1:0] index,
@@ -44,7 +44,7 @@ module bf_1_from_index #(
 endmodule
 
 module bf_clr_lowest_1 #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     input   logic [$clog2(NUM_PORTS)-1:0] index,
@@ -54,7 +54,7 @@ module bf_clr_lowest_1 #(
 endmodule
 
 module bf_set_lowest_0 #(
-    parameter NUM_PORTS = 16;
+    parameter NUM_PORTS = 16
 ) (
     input   logic [NUM_PORTS-1:0]  req_i,
     input   logic [$clog2(NUM_PORTS)-1:0] index,

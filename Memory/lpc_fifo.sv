@@ -21,7 +21,7 @@ module lpc_fifo (
     output logic wr_flush,
 
     // Read Interface
-    input logic rd_valid
+    input logic rd_valid,
     output logic [7:0] rd_payload,
 
     // Q-Channel Interface
@@ -69,7 +69,7 @@ module lpc_fifo (
 
         .full       (fifo_full),
         .empty      (fifo_empty)
-    )
+    );
 
 
     ///------------------------------------

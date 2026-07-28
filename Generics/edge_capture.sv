@@ -9,12 +9,20 @@ module edge_capture (
  	input   logic        reset,
   	input   logic [31:0] data_i,
 
-  	output  logic [31:0] posedge_o
+  	output  logic [31:0] posedge_o,
   	output  logic [31:0] negedge_o
 );
+
+	// --------------------------------------------------------
+    // Internal Signal List
+    // --------------------------------------------------------
 	logic [31:0] data_q;
   	logic [31:0] posedge_q;
   	logic [31:0] negedge_q;
+
+	// --------------------------------------------------------
+    // Edge Capture Logic
+    // --------------------------------------------------------
   	always_ff @(posedge clk or posedge reset) begin
     	if (reset) begin
 			data_q <= 32'h0;
@@ -26,6 +34,11 @@ module edge_capture (
 			negedge_q <= negedge_o; // Latch Detected Negative Edges
     	end
   	end
+
+	// --------------------------------------------------------
+    // Output Assignments
+    // --------------------------------------------------------
   	assign posedge_o = (data_i & ~data_q) | posedge_q;
   	assign negedge_o = (~data_i & data_q) | negedge_q;
+
 endmodule

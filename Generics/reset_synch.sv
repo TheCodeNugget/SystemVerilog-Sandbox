@@ -5,9 +5,9 @@
 /// ASync Reset Synchronizer -- Parametrized for prop times
 /// --------------------------------------------------------
 module reset_synch #(
-	parameter MIN_RST  = 5,  // Min Valid Reset Duration 
-	parameter CLK_TIME = 7,  // Clk Tree Prop Time
-	parameter RST_TIME = 8,  // Rst Tree Prop Time
+	parameter MIN_RST  = 5,	// Min Valid Reset Duration 
+	parameter CLK_TIME = 7, // Clk Tree Prop Time
+	parameter RST_TIME = 8	// Rst Tree Prop Time
 ) (
 	input   logic        clk,
 	input   logic        reset,

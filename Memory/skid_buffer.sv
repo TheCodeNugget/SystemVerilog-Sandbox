@@ -4,7 +4,7 @@
 /// 25/06/2026
 /// Generic Skid Buffer
 /// --------------------------------------------------------
-odule skid_buffer (
+module skid_buffer (
   input   logic        clk,
   input   logic        reset,
 
