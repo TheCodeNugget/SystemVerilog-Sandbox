@@ -1,0 +1,5 @@
+// Ignore Compiled Files
+*.o
+
+// Ignore Simulation Waveform Files
+*.vcd
