@@ -4,6 +4,8 @@
 /// 30/06/2026
 /// 24Hr Clock using BCD Counters
 /// --------------------------------------------------------
+`timescale 1ns/1ns
+
 module bcd_clock (
     input logic clk,
     input logic rst,

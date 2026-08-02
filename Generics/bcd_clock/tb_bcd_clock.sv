@@ -46,12 +46,11 @@ module tb_bcd_clock;
         if (clock_combined != 24'h0) $fatal(1, "[FATAL] @ %0t: Reset Behaviour Incorrect!", $time);
         $display("[INFO] @ %0t: Reset Behaviour OK!", $time);
         rst = 1'b0;
-        @(posedge clk);
 
         // Testing Rollovers
         repeat (10) @(posedge clk);
         $display("[INFO] @ %0t: Testing 1's Rollover", $time);
-        if (clock_combined != 24'h10) $fatal(1, "[FATAL] @ %0t: 1's Rollover Behaviour Incorrect!", $time);
+        if (clock_combined != 24'h10) $fatal(1, "[FATAL] @ %0t: 1's Rollover Behaviour Incorrect! Expected: 0x%h  Got: 0x%h", $time, 24'h10, clock_combined);
         $display("[INFO] @ %0t: 1's Rollover Behaviour OK!", $time);
 
         repeat (50) @(posedge clk);
