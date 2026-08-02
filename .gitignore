@@ -3,3 +3,6 @@
 
 // Ignore Simulation Waveform Files
 *.vcd
+
+// Ignore Verilator Compiles
+*obj_dir
