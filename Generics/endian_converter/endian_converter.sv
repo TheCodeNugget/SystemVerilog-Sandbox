@@ -3,6 +3,7 @@
 /// Ken The Nugget
 /// 25/06/2026
 /// --------------------------------------------------------
+`timescale 1ns/1ns
 
 module endian_converter #(
   parameter DATA_WIDTH = 32
