@@ -27,3 +27,25 @@ module clk_div #(
         end
     end
 endmodule
+
+module clk_tick #(
+    parameter MODULO = 6000000
+) (
+    input   logic   clk,
+    input   logic   reset_n,
+
+    output  logic   tick
+);
+
+    localparam WIDTH = (MODULO == 1) ? 1 : $clog2(MODULO);
+
+    logic [WIDTH-1:0] count;
+
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) count <= '0;
+        else count <= count + 1;
+    end
+
+    assign tick = (count == (MODULO - 1));
+
+endmodule
